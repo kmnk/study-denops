@@ -5,7 +5,9 @@ import { ensureString } from "https://deno.land/x/unknownutil@v2.0.0/mod.ts";
 export async function main(denops: Denops): Promise<void> {
   denops.dispatcher = {
     async echo(text: unknown): Promise<unknown> {
+      console.log('hoge');
       ensureString(text);
+      console.log(text);
       return await Promise.resolve(text);
     },
   };
